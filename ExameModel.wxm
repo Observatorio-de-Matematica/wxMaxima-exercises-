@@ -1,0 +1,392 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 22.04.0 ] */
+/* [wxMaxima: title   start ]
+1
+   [wxMaxima: title   end   ] */
+
+
+/* [wxMaxima: comment start ]
+1.1
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+f(x):= x²;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+g(x):= -x³ -1;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+define(h(x),diff(f(x),x));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+1.2
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+f(-1);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+f(1);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+1.3
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+g(-5^(1/3));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+g(1);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+1.4
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(
+    grid=true,
+    xaxis=true,
+    yaxis=true,
+    yrange=[-10,10],
+    color=blue,
+    key="f(x)",
+    explicit(f(x),x,-2,2),
+    color=red,
+    key="g(x)",
+    explicit(g(x),x,-2,2),
+    color=green,
+    key="y=-2",
+    explicit(-2,x,-2,2),
+    color=black,
+    key="y=4",
+    explicit(4,x,-2,2)
+);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+1.5
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+define(dh(x),diff(h(x),x));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(
+grid=true,
+xaxis=true,
+yaxis=true,
+yrange=[-10,10],
+color=green,
+key="dh(x)",
+explicit(dh(x),x,-2,2),
+color=black,
+key="y=0",
+explicit(0,x,-2,2)
+);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+1.6 f(x)-g(x)=0 => f(x)=g(x)
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+solve(f(x)=g(x),x);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+float(%);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+x0: -1.465571231876778;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+OU
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+find_root(f(x)-g(x),-2,2);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+1.7
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+fx0: f(x0);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+gx0: g(x0);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(
+    grid=true,
+    xaxis=true,
+    yaxis=true,
+    yrange=[-10,10],
+    color=blue,
+    key="f(x)",
+    explicit(f(x),x,-2,2),
+    color=red,
+    key="g(x)",
+    explicit(g(x),x,-2,2),
+    color=green,
+    key="x=x0",
+    parametric(x0,t,t,-10,10),
+    color=black,
+    key="y=g(x0)",
+    explicit(gx0,x,-2,2),
+    key="P(x0,f(x0))",
+    color=yellow,
+    point_type=7,
+    points([[x0,fx0]])
+);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+1.8
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(
+    grid=true,
+    xaxis=true,
+    yaxis=true,
+    yrange=[-10,10],
+    color=blue,
+    key="f(x)",
+    explicit(f(x),x,-2,2),
+    color=red,
+    key="g(x)",
+    explicit(g(x),x,-2,2),
+    key="P(x0,fx0)",
+    color=green,
+    point_type=7,
+    points([[x0,fx0]])
+);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+1.9
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+solve(g(x)=26,x);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: title   start ]
+3
+   [wxMaxima: title   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+kill(all);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+3.1
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+eq1: x+2*y +z =1;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+eq2: 2*x + 4*y = 0;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+eq3: x+y-z=0;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+SolS1: solve([eq1,eq2],[x,y,z]);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+SolS2: solve([eq1,eq2,eq3],[x,y,z]);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxdraw3d(
+    xaxis=true, yaxis=true, zaxis=true,
+    color=blue,
+    parametric(-2*t,t,1,t,-10,10),
+    color=red,point_type=7,
+    points([[2,-1,1]]) 
+);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+3.2
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+subst([SolS1],[z=1]);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+3.3
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+subst([SolS1],[y=k]);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+solve(t=k,t);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+3.4
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+subst([x=0,y=0,z=0],[eq1,eq2]);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+não pertence
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+subst([x=0,y=0,z=0],[eq1,eq2,eq3]);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+tambem nao pertece 
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: comment start ]
+3.5
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+eqr1: x+2*y=0
+;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+eqr2: z=1;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+eqr: solve([eqr1,eqr2],[x,y,z]);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+subst([eqr],[eq1]);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+3.6
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+eqx2: x=2;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+subst([eqr],eqx2);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+solve(-2*t=2,t);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+para t=-1 pertence ao plano x=2
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: comment start ]
+3.7
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+SolS2;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxdraw3d(
+grid=true,xaxis=true,yaxis=true,zaxis=true,
+    color=green, key="x",implicit(x=2,x,-6,6,y,-6,6,z,-6,6),
+    color=blue, key="y",implicit(y=-1,x,-6,6,y,-6,6,z,-6,6),
+    color=yellow, key="z", implicit(z=1,x,-6,6,y,-6,6,z,-6,6),
+    key="SoluçaoSistema",color=red,point_type=7, points([[2,-1,1]])
+);
+/* [wxMaxima: input   end   ] */
+
+
+
+/* Old versions of Maxima abort on loading files that end in a comment. */
+"Created with wxMaxima 22.04.0"$
